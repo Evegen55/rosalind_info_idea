@@ -1,29 +1,15 @@
 
 package bioinf_stronghold._12_lcsm;
 
-import bioinf_stronghold._6_gc.FileReaderMy;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FindingSharedMotif {
-	public void resolve(String filename){
-		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
-				.entrySet()
-				.stream()
-				.map(e -> e.getValue())
-				.collect(Collectors.toList());
-		//list.stream().forEach(System.out::println);
-        
-	}	
-
 	/**
-	 * 
+	 *
 	 * @param word
 	 * @param dna
-	 * @return
-	 */
+     * @return 1 if find FIRST equals part in a DNA
+     */
 	public int findFirst(String word, String dna){
 		int wordLength = word.length();
 		int dnaLength = dna.length();
@@ -38,11 +24,13 @@ public class FindingSharedMotif {
 		}
 		return 0;
 	}
-	
+
 	/**
-	 * 
-	 * @param list
-	 */
+	 *
+	 * @param word small part of dna
+	 * @param list  of DNA strings
+     * @return
+     */
 	public boolean findFirstThrueListOfStrings(String word, List<String> list) {
 		for(String dna: list) {
 			if(findFirst(word, dna) == 0) return false;
@@ -52,7 +40,7 @@ public class FindingSharedMotif {
 	
 	/**
 	 * 
-	 * @param list
+	 * @param list of DNA strings
 	 */
 	public void findAllPossibleWithFirstWord(List<String> list){
 		
@@ -66,7 +54,7 @@ public class FindingSharedMotif {
 
 	/**
 	 *
-	 * @param list
+	 * @param list of DNA strings
 	 */
 	public void findAllPossible(List<String> list){
 

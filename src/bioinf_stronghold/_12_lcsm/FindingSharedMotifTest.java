@@ -12,16 +12,10 @@ import static org.junit.Assert.assertTrue;
 public class FindingSharedMotifTest {
 
 	FindingSharedMotif fm;
-	
-	@Ignore
-	@Test
-	public void testResolve() {
-		//fail("Not yet implemented");
-		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
-		fm.resolve(filename);
-	}
-	@Ignore
+	String filename;
+	List<String> list;
+
+	//@Ignore
 	@Test
 	public void testfindFirst(){
 		String word = "AC";
@@ -30,13 +24,13 @@ public class FindingSharedMotifTest {
 		int i = fm.findFirst(word, dna);
 		assertTrue(i == 1);
 	}
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindFirstThrueListOfStrings() {
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -45,13 +39,13 @@ public class FindingSharedMotifTest {
 		boolean bool = fm.findFirstThrueListOfStrings(word, list);
 		assertTrue(bool);
 	}
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindFirstThrueListOfStrings1() {
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -60,13 +54,13 @@ public class FindingSharedMotifTest {
 		boolean bool = fm.findFirstThrueListOfStrings(word, list);
 		assertTrue(!bool);
 	}
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindFirstThrueListOfStringsBigList() {
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -75,13 +69,13 @@ public class FindingSharedMotifTest {
 		boolean bool = fm.findFirstThrueListOfStrings(word, list);
 		assertTrue(bool);
 	}
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindFirstThrueListOfStringsBigListBigWord() {
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -91,13 +85,13 @@ public class FindingSharedMotifTest {
 		assertTrue(!bool);
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindAllPossibleSmallList(){
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -105,13 +99,13 @@ public class FindingSharedMotifTest {
 		fm.findAllPossibleWithFirstWord(list);
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void testFindAllPossibleBiglList(){
 		fm = new FindingSharedMotif();
-		String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
+		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		List<String> list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderMy.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -123,9 +117,9 @@ public class FindingSharedMotifTest {
     @Test
     public void testFindAllPossible(){
         fm = new FindingSharedMotif();
-        String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
+        filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
         //create a list with only DNA - strings
-        List<String> list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderMy.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(e -> e.getValue())
@@ -139,12 +133,12 @@ public class FindingSharedMotifTest {
         fm = new FindingSharedMotif();
         String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
         //create a list with only DNA - strings
-        List<String> list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderMy.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(e -> e.getValue())
                 .collect(Collectors.toList());
-
+		//measure time
         long start = System.nanoTime();
         fm.findAllPossible(list);
         long end = System.nanoTime();
