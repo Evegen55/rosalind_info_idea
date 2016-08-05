@@ -46,6 +46,20 @@ public class TranslatingRNAIntoProtein {
         return 1;
     }
     public String resolve(String dna){
-        return null;
+        int wordLength = dna.length();
+        int codonLenght = 3;
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i<wordLength; i +=3) {
+            if(codonLenght+i <= wordLength) {
+                String s = dna.substring(i, i+3);
+                //System.out.println(s);
+                char ch = makeAminoAcidFromCodon(s);
+                if (ch != 0 && ch != 1) {
+                    sb.append(ch);
+                }
+            }
+
+        }
+        return sb.toString();
     }
 }
