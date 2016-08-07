@@ -41,9 +41,8 @@ public class TranslatingRNAIntoProtein {
         if(codon.equals("GUA") || codon.equals("GUC") || codon.equals("GUG") || codon.equals("GUU")) return 'V';
         if(codon.equals("UGG")) return 'W';
         if(codon.equals("UAC") || codon.equals("UAU")) return 'Y';
-        if(codon.equals("UAA") || codon.equals("UAG") || codon.equals("UGA") || codon.equals("CCU")) return 0;
-
-        return 1;
+        if(codon.equals("UAA") || codon.equals("UAG") || codon.equals("UGA") || codon.equals("CCU")) return 0; //STOP
+        return 1; //ERROR
     }
     public String resolve(String dna){
         int wordLength = dna.length();
