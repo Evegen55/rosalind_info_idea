@@ -29,7 +29,7 @@ public class TranslatingRNAIntoProtein {
         if(codon.equals("AAA") || codon.equals("AAG")) return 'K';
         if(codon.equals("CUA") || codon.equals("CUC") || codon.equals("CUG") || codon.equals("CUU")
                 || codon.equals("UUA")|| codon.equals("UUG")) return 'L';
-        if(codon.equals("AUG")) return 'M';
+        if(codon.equals("AUG")) return 'M'; //THIS IS A START CODON
         if(codon.equals("AAC") || codon.equals("AAU")) return 'N';
         if(codon.equals("CCA") || codon.equals("CCC") || codon.equals("CCG") || codon.equals("CCU")) return 'P';
         if(codon.equals("CAA") || codon.equals("CAG")) return 'Q';
