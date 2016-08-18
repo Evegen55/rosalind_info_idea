@@ -22,21 +22,28 @@ public class ConsensusAndProfile {
         profileMap.put('G', new int[profileRowLength]);
 
         for (String dna : list) {
-            int[] ints = new int[0];
             for (int i=0; i<dna.length(); i++) {
                 final char nucleotide = dna.charAt(i);
-                ints = profileMap.get(nucleotide);
+                final int[] ints = profileMap.get(nucleotide);
                 ints[i] += 1;
             }
-
-            //print array
-            for (int a : ints) {
-                System.out.print(a);
-            }
-            System.out.println();
         }
 
-        profileMap.entrySet().stream().forEach(System.out::println);
+        for (int i : profileMap.get('A')) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : profileMap.get('C')) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : profileMap.get('G')) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : profileMap.get('T')) {
+            System.out.print(i + " ");
+        }
 
         throw new UnsupportedOperationException("\n TODO");
     }
