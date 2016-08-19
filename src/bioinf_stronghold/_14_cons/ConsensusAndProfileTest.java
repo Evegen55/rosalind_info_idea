@@ -31,4 +31,16 @@ public class ConsensusAndProfileTest {
 
     }
 
+    @Test
+    public void resolveBig() throws Exception {
+        filename = "src/bioinf_stronghold/_14_cons/rosalind_cons.txt";
+        list = FileReaderMy.getMapFromFile(filename)
+                .entrySet()
+                .stream()
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
+        cap = new ConsensusAndProfile();
+        cap.resolve(list);
+    }
+
 }
