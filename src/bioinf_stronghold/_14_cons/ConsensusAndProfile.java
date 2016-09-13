@@ -139,4 +139,8 @@ public class ConsensusAndProfile {
             e.printStackTrace();
         }
     }
+
+    private void printMapWithStringJoiner(Map<Character, int[]> profileMap) {
+
+    }
 }

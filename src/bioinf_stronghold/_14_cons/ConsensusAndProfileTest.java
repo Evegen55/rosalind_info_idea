@@ -32,6 +32,19 @@ public class ConsensusAndProfileTest {
     }
 
     @Test
+    public void resolve1() throws Exception {
+        filename = "src/bioinf_stronghold/_14_cons/cons1.txt";
+        list = FileReaderMy.getMapFromFile(filename)
+                .entrySet()
+                .stream()
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
+        cap = new ConsensusAndProfile();
+        cap.resolve(list);
+
+    }
+
+    @Test
     public void resolveBig() throws Exception {
         filename = "src/bioinf_stronghold/_14_cons/rosalind_cons.txt";
         list = FileReaderMy.getMapFromFile(filename)
