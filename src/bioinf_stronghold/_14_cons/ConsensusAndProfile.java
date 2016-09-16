@@ -7,11 +7,17 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringJoiner;
 
 /**
  * Created by Evgenii_Lartcev on 8/18/2016.
  */
 public class ConsensusAndProfile {
+    private String concensus;
+    private String A_string;
+    private String C_string;
+    private String G_string;
+    private String T_string;
     public void resolve(List<String> list){
         //print a list
         //list.stream().forEach(System.out::println);
@@ -20,21 +26,42 @@ public class ConsensusAndProfile {
         final int profileRowLength = list.get(0).length();
         profileMap.put('A', new int[profileRowLength]);
         profileMap.put('C', new int[profileRowLength]);
-        profileMap.put('T', new int[profileRowLength]);
         profileMap.put('G', new int[profileRowLength]);
+        profileMap.put('T', new int[profileRowLength]);
 
         for (String dna : list) {
             for (int i=0; i<dna.length(); i++) {
                 final char nucleotide = dna.charAt(i);
                 final int[] ints = profileMap.get(nucleotide);
                 ints[i] += 1;
+                profileMap.put(nucleotide, ints);
             }
         }
-        String cons = findConcensus(profileMap, profileRowLength);
-        System.out.println(cons);
-        printMapOnlyValues(profileMap);
+        concensus = findConcensus(profileMap, profileRowLength);
+        A_string = getStringFromProfileMap(profileMap, "A:");
+        C_string = getStringFromProfileMap(profileMap, "C:");
+        G_string = getStringFromProfileMap(profileMap, "G:");
+        T_string = getStringFromProfileMap(profileMap, "T:");
+    }
 
-        printToFile(profileMap, cons);
+    public String getConcensus() {
+        return concensus;
+    }
+
+    public String getA_string() {
+        return A_string;
+    }
+
+    public String getC_string() {
+        return C_string;
+    }
+
+    public String getG_string() {
+        return G_string;
+    }
+
+    public String getT_string() {
+        return T_string;
     }
 
     private String findConcensus(Map<Character, int[]> profileMap, int profileRowLength) {
@@ -80,7 +107,26 @@ public class ConsensusAndProfile {
         return sb.toString();
     }
 
-    private void printMapOnlyValues(Map<Character, int[]> profileMap) {
+    private String getStringFromProfileMap(Map<Character, int[]> profileMap, String a) {
+        StringJoiner sb = new StringJoiner(" ");
+        sb.add(a);
+        for (int i : profileMap.get(a.charAt(0))) {
+            sb.add(String.valueOf(i));
+        }
+        return sb.toString();
+    }
+
+    public void printToFileAll(String filename, String cons, String A, String C, String G, String T) {
+        String filenameToWrite = filename + "_out";
+        File f = new File(filenameToWrite);
+        try(BufferedWriter br = new BufferedWriter(new FileWriter(f));){
+            br.write(cons + "\n" + A + "\n" + C + "\n" + G + "\n" + T + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printMapOnlyValues(Map<Character, int[]> profileMap) {
         System.out.print("A: ");
         for (int i : profileMap.get('A')) {
             System.out.print(i + " ");
