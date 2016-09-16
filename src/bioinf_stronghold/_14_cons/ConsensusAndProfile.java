@@ -34,7 +34,6 @@ public class ConsensusAndProfile {
                 final char nucleotide = dna.charAt(i);
                 final int[] ints = profileMap.get(nucleotide);
                 ints[i] += 1;
-                profileMap.put(nucleotide, ints);
             }
         }
         concensus = findConcensus(profileMap, profileRowLength);
@@ -97,6 +96,7 @@ public class ConsensusAndProfile {
                     if (q == 1) sb.append("C");   //System.out.print("C");
                     if (q == 2) sb.append("G");   //System.out.print("G");
                     if (q == 3) sb.append("T");   //System.out.print("T");
+                    break;
                 }
                 //System.out.print(arr_max[q] + " ");
             }
@@ -121,6 +121,7 @@ public class ConsensusAndProfile {
         File f = new File(filenameToWrite);
         try(BufferedWriter br = new BufferedWriter(new FileWriter(f));){
             br.write(cons + "\n" + A + "\n" + C + "\n" + G + "\n" + T + "\n");
+            br.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
