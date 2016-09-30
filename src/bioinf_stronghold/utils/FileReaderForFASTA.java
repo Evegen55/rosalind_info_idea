@@ -13,8 +13,9 @@ import java.util.HashMap;
 public class FileReaderForFASTA {
 
     /**
-     * @param filename
-     * @return map that contains Key as ">Rosalind_9648" and value as "ACTGCGTGCTGCTGA"
+     * @param filename the name of file in a FASTA format
+     * @return map that contains key as ">Rosalind_9648" and value as "ACTGCGTGCTGCTGA"
+     * @see <a href="https://ru.wikipedia.org/wiki/FASTA">WIKIPEDIA</a>
      */
     public static HashMap<String, String> getMapFromFile(String filename) {
         HashMap<String, String> map = new HashMap<String, String>();
