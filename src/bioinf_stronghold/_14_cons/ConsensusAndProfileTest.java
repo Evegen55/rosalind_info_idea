@@ -1,6 +1,6 @@
 package bioinf_stronghold._14_cons;
 
-import bioinf_stronghold._6_gc.FileReaderMy;
+import bioinf_stronghold.utils.FileReaderMy;
 import org.junit.Test;
 
 import java.util.List;

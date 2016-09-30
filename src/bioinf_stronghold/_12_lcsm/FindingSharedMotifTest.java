@@ -1,6 +1,6 @@
 package bioinf_stronghold._12_lcsm;
 
-import bioinf_stronghold._6_gc.FileReaderMy;
+import bioinf_stronghold.utils.FileReaderMy;
 import org.junit.Ignore;
 import org.junit.Test;
 

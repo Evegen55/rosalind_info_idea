@@ -1,4 +1,4 @@
-package bioinf_stronghold._6_gc;
+package bioinf_stronghold.utils;
 
 import java.io.BufferedReader;
 import java.io.File;

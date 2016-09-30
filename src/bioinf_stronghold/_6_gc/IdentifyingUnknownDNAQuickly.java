@@ -3,12 +3,11 @@
  */
 package bioinf_stronghold._6_gc;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import bioinf_stronghold._1_dna.NucleCount;
+import bioinf_stronghold.utils.FileReaderMy;
 
 /**
  * @author Evegen
