@@ -11,12 +11,12 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 /**
- * Created by Evgenii_Lartcev on 8/18/2016.
+ * @author Evgenii_Lartcev on 8/18/2016.
  */
 public class ConsensusAndProfileTest {
-    ConsensusAndProfile cap;
-    String filename;
-    List<String> list;
+    private ConsensusAndProfile cap;
+    private String filename;
+    private List<String> list;
 
     private final String example = "ATGCAACT";
     private final String exampleA = "A: 5 1 0 0 5 5 0 0";
