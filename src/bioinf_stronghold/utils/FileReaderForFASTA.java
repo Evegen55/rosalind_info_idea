@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class FileReaderMy {
+public class FileReaderForFASTA {
 
 	/**
 	 * 

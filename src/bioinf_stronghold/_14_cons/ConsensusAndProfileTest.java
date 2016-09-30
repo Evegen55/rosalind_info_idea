@@ -1,6 +1,6 @@
 package bioinf_stronghold._14_cons;
 
-import bioinf_stronghold.utils.FileReaderMy;
+import bioinf_stronghold.utils.FileReaderForFASTA;
 import org.junit.Test;
 
 import java.util.List;
@@ -27,7 +27,7 @@ public class ConsensusAndProfileTest {
     @Test
     public void resolve() throws Exception {
         filename = "src/bioinf_stronghold/_14_cons/cons.txt";
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(Map.Entry::getValue)
@@ -46,7 +46,7 @@ public class ConsensusAndProfileTest {
     @Test
     public void resolveWithPrintToFile() throws Exception {
         filename = "src/bioinf_stronghold/_14_cons/cons1.txt";
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(Map.Entry::getValue)
@@ -66,7 +66,7 @@ public class ConsensusAndProfileTest {
     @Test
     public void resolveBig() throws Exception {
         filename = "src/bioinf_stronghold/_14_cons/rosalind_cons.txt";
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(Map.Entry::getValue)
@@ -79,7 +79,7 @@ public class ConsensusAndProfileTest {
     @Test
     public void resolveBigExample() throws Exception {
         filename = "src/bioinf_stronghold/_14_cons/cons_bigtest.txt";
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(Map.Entry::getValue)

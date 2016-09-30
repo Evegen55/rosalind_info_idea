@@ -1,6 +1,6 @@
 package bioinf_stronghold._12_lcsm;
 
-import bioinf_stronghold.utils.FileReaderMy;
+import bioinf_stronghold.utils.FileReaderForFASTA;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -30,7 +30,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -45,7 +45,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -60,7 +60,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -75,7 +75,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -91,7 +91,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -105,7 +105,7 @@ public class FindingSharedMotifTest {
 		fm = new FindingSharedMotif();
 		filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
 		//create a list with only DNA - strings
-		list = FileReaderMy.getMapFromFile(filename)
+		list = FileReaderForFASTA.getMapFromFile(filename)
 				.entrySet()
 				.stream()
 				.map(e -> e.getValue())
@@ -119,7 +119,7 @@ public class FindingSharedMotifTest {
         fm = new FindingSharedMotif();
         filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
         //create a list with only DNA - strings
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(e -> e.getValue())
@@ -133,7 +133,7 @@ public class FindingSharedMotifTest {
         fm = new FindingSharedMotif();
         String filename = "src/bioinf_stronghold/_12_lcsm/rosalind_lcsm.txt";
         //create a list with only DNA - strings
-        list = FileReaderMy.getMapFromFile(filename)
+        list = FileReaderForFASTA.getMapFromFile(filename)
                 .entrySet()
                 .stream()
                 .map(e -> e.getValue())

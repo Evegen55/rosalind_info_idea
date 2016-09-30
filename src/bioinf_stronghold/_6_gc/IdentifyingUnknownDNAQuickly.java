@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import bioinf_stronghold._1_dna.NucleCount;
-import bioinf_stronghold.utils.FileReaderMy;
+import bioinf_stronghold.utils.FileReaderForFASTA;
 
 /**
  * @author Evegen
@@ -23,7 +23,7 @@ public class IdentifyingUnknownDNAQuickly {
 	
 	public IdentifyingUnknownDNAQuickly(String filename) {
 		this.filename = filename;
-		FastaDNAMap = FileReaderMy.getMapFromFile(filename);
+		FastaDNAMap = FileReaderForFASTA.getMapFromFile(filename);
 		mapPerc = new HashMap<String,Double>();
 		
 		//working with file, find and set percent and label
