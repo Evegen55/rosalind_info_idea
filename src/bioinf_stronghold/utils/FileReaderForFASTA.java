@@ -36,8 +36,8 @@ public class FileReaderForFASTA {
 					
 				} else {
 					sb.append(line);
-					String actg = sb.toString();
-					map.put(label, actg);
+					String dnaPart = sb.toString();
+					map.put(label, dnaPart);
 					//System.out.println(label + " =========== " + actg);
 				}
 				
