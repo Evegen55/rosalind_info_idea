@@ -16,7 +16,7 @@ public class BinarySearchKeySetInSortedArray {
 	 * @param n <= 10^5
 	 * @param m <= 10^5
 	 * @param arrN is a sorted array A[1..n] of integers from -10^5 to 10^5
-	 * @param arrM a list of m integers -10^5 <= k1,k2,…,km <=10^5.
+	 * @param arrM a list of m integers -10^5 <= k1,k2,,km <=10^5.
 	 * @return For each ki, output an index 1 <= j <= n s.t. A[j]=ki or "-1" if there is no such index.
 	 */
 	public int[] calculate(int n, int m, int[] arrN, int[] arrM) {
@@ -67,7 +67,7 @@ public class BinarySearchKeySetInSortedArray {
 	 * @param n <= 10^5
 	 * @param m <= 10^5
 	 * @param arrN is a sorted array A[1..n] of INTEGERS AS STRINGS from -10^5 to 10^5
-	 * @param arrM a list of m INTEGERS AS STRINGS -10^5 <= k1,k2,…,km <=10^5.
+	 * @param arrM a list of m INTEGERS AS STRINGS -10^5 <= k1,k2,,km <=10^5.
 	 * @return For each ki, output an index 1 <= j <= n s.t. A[j]=ki or "-1" if there is no such index.
 	 */
 	public String[] calculateStr(int n, int m, String[] arrN, String[] arrM) {
