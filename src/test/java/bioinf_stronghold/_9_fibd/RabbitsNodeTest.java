@@ -141,7 +141,7 @@ public class RabbitsNodeTest {
     @Test
     public void buildRabbitsThreeFree() {
         int N = 40; // общий срок расчетов                 //Duration to build tree 8967 milliseconds
-        int M = 13; //срок жизни одной пары
+        int M = 20; //срок жизни одной пары //max 20
         LocalDateTime before = LocalDateTime.now();
         System.out.println("Before " + before + "\n");
 
@@ -183,7 +183,64 @@ Duration full 123401 milliseconds
 
 ===========================================
 
+int N = 40;
 
+int M = 15;
+
+Before 2018-08-01T01:46:43.058868
+
+Middle 2018-08-01T01:46:53.216429
+
+Duration to build tree 10157 milliseconds
+
+Leafs: 101436039
+
+After 2018-08-01T01:47:50.868673
+
+Duration to count leafs 57652 milliseconds
+
+Duration full 67809 milliseconds
+
+============================================
+
+int N = 40;
+
+int M = 18;
+
+Before 2018-08-01T01:48:44.372671
+
+Middle 2018-08-01T01:48:55.072539
+
+Duration to build tree 10699 milliseconds
+
+Leafs: 102145741
+
+After 2018-08-01T01:49:52.593419
+
+Duration to count leafs 57520 milliseconds
+
+Duration full 68220 milliseconds
+
+
+============================================
+
+int N = 40;
+
+int M = 20;
+
+Before 2018-08-01T01:51:04.586782
+
+Middle 2018-08-01T01:51:14.541967
+
+Duration to build tree 9955 milliseconds
+
+Leafs: 102268235
+
+After 2018-08-01T01:52:11.732078
+
+Duration to count leafs 57190 milliseconds
+
+Duration full 67145 milliseconds
      */
 
 }

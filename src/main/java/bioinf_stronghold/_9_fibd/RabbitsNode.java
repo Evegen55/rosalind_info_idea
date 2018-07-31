@@ -90,15 +90,22 @@ public class RabbitsNode {
         queue.addLast(rabbitsNode);
         while (!queue.isEmpty()) {
             RabbitsNode rabbitsNodeFromQueue = queue.removeFirst();
-            if (rabbitsNodeFromQueue.getLowerPairAsChild() == null && rabbitsNodeFromQueue.getUpperPairAsSelfLink() == null) { //the lowest leaf
+            RabbitsNode lowerPairAsChild = rabbitsNodeFromQueue.getLowerPairAsChild();
+            RabbitsNode upperPairAsSelfLink = rabbitsNodeFromQueue.getUpperPairAsSelfLink();
+
+            if (lowerPairAsChild == null && upperPairAsSelfLink == null) { //the lowest leaf
                 result += 1;
             }
-            if (rabbitsNodeFromQueue.getLowerPairAsChild() != null) {
-                queue.addLast(rabbitsNodeFromQueue.getLowerPairAsChild());
+            if (lowerPairAsChild != null) {
+                queue.addLast(lowerPairAsChild);
             }
-            if (rabbitsNodeFromQueue.getUpperPairAsSelfLink() != null) {
-                queue.addLast(rabbitsNodeFromQueue.getUpperPairAsSelfLink());
+            if (upperPairAsSelfLink != null) {
+                queue.addLast(upperPairAsSelfLink);
             }
+            rabbitsNodeFromQueue.lowerPairAsChild = null;
+            rabbitsNodeFromQueue.upperPairAsSelfLink = null;
+            lowerPairAsChild = null;
+            upperPairAsSelfLink = null;
         }
         return result;
     }
