@@ -28,7 +28,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(1, leafs);
     }
 
@@ -39,7 +39,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(1, leafs);
     }
 
@@ -50,7 +50,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(2, leafs);
     }
 
@@ -61,7 +61,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(2, leafs);
     }
 
@@ -72,7 +72,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(3, leafs);
     }
 
@@ -83,7 +83,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(4, leafs);
     }
 
@@ -94,7 +94,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(5, leafs);
     }
 
@@ -105,7 +105,7 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(7, leafs);
     }
 
@@ -116,14 +116,14 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         assertEquals(9, leafs);
     }
 
     @Test
     public void buildRabbitsThreeFree() {
-        int N = 6; // общий срок расчетов
-        int M = 4; //срок жизни одной пары
+        int N = 40; // общий срок расчетов                 //Duration to build tree 8967 milliseconds
+        int M = 10; //срок жизни одной пары
         LocalDateTime before = LocalDateTime.now();
         System.out.println("Before " + before + "\n");
 
@@ -135,8 +135,8 @@ public class RabbitsNodeTest {
         System.out.println("Middle " + middle + "\n");
         System.out.println("Duration to build tree " + Duration.between(before, middle).toMillis() + " milliseconds" + "\n");
 
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
-        System.out.println("Leafs: " + leafs + "\n");
+//        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+//        System.out.println("Leafs: " + leafs + "\n");
 
         LocalDateTime after = LocalDateTime.now();
         System.out.println("After " + after + "\n");

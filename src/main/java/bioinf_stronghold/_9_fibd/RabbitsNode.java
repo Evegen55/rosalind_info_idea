@@ -84,8 +84,8 @@ public class RabbitsNode {
         }
     }
 
-    public static int countLeafsAtTreeAtMaximumDepth(RabbitsNode rabbitsNode) {
-        int result = 0;
+    public static long countLeafsAtTreeAtMaximumDepth(RabbitsNode rabbitsNode) {
+        long result = 0;
         final LinkedList<RabbitsNode> queue = new LinkedList<>();
         queue.addLast(rabbitsNode);
         while (!queue.isEmpty()) {
@@ -108,7 +108,7 @@ public class RabbitsNode {
         RabbitsNode rabbitsNode = new RabbitsNode(3);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, MONTHS); //2 because month is two.
-        int leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
         System.out.println(leafs);
     }
 }
