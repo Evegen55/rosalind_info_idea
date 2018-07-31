@@ -5,9 +5,7 @@ import org.junit.Test;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import static bioinf_stronghold._9_fibd.RabbitsNode.addHistoricalPairNode;
-import static bioinf_stronghold._9_fibd.RabbitsNode.countLeafsAtTreeAtMaximumDepth;
-import static bioinf_stronghold._9_fibd.RabbitsNode.performLeafNodes;
+import static bioinf_stronghold._9_fibd.RabbitsNode.*;
 import static org.junit.Assert.assertEquals;
 
 public class RabbitsNodeTest {
@@ -122,28 +120,28 @@ public class RabbitsNodeTest {
 
     /**
      * -Xmx12G
-     *
+     * <p>
      * Before 2018-08-01T01:10:53.303983
-     *
+     * <p>
      * Middle 2018-08-01T01:11:03.382539
-     *
+     * <p>
      * Duration to build tree 10078 milliseconds
-     *
+     * <p>
      * Leafs: 90815799
-     *
+     * <p>
      * After 2018-08-01T01:12:16.618869
-     *
+     * <p>
      * Duration to count leafs 73236 milliseconds
-     *
+     * <p>
      * Duration full 83314 milliseconds
-     *
-     *
+     * <p>
+     * <p>
      * Process finished with exit code 0
      */
     @Test
     public void buildRabbitsThreeFree() {
         int N = 40; // общий срок расчетов                 //Duration to build tree 8967 milliseconds
-        int M = 10; //срок жизни одной пары
+        int M = 13; //срок жизни одной пары
         LocalDateTime before = LocalDateTime.now();
         System.out.println("Before " + before + "\n");
 
@@ -155,7 +153,7 @@ public class RabbitsNodeTest {
         System.out.println("Middle " + middle + "\n");
         System.out.println("Duration to build tree " + Duration.between(before, middle).toMillis() + " milliseconds" + "\n");
 
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode); // TODO: 01.08.18 MULTITHREADING??
         System.out.println("Leafs: " + leafs + "\n");
 
         LocalDateTime after = LocalDateTime.now();
@@ -163,5 +161,29 @@ public class RabbitsNodeTest {
         System.out.println("Duration to count leafs " + Duration.between(middle, after).toMillis() + " milliseconds" + "\n");
         System.out.println("Duration full " + Duration.between(before, after).toMillis() + " milliseconds" + "\n");
     }
+
+    /*
+int N = 40;
+
+int M = 12;
+
+Before 2018-08-01T01:14:05.987745
+
+Middle 2018-08-01T01:14:16.034387
+
+Duration to build tree 10046 milliseconds
+
+Leafs: 98130253
+
+After 2018-08-01T01:16:09.389341
+
+Duration to count leafs 113354 milliseconds
+
+Duration full 123401 milliseconds
+
+===========================================
+
+
+     */
 
 }
