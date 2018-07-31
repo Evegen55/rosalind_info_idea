@@ -120,6 +120,26 @@ public class RabbitsNodeTest {
         assertEquals(9, leafs);
     }
 
+    /**
+     * -Xmx12G
+     *
+     * Before 2018-08-01T01:10:53.303983
+     *
+     * Middle 2018-08-01T01:11:03.382539
+     *
+     * Duration to build tree 10078 milliseconds
+     *
+     * Leafs: 90815799
+     *
+     * After 2018-08-01T01:12:16.618869
+     *
+     * Duration to count leafs 73236 milliseconds
+     *
+     * Duration full 83314 milliseconds
+     *
+     *
+     * Process finished with exit code 0
+     */
     @Test
     public void buildRabbitsThreeFree() {
         int N = 40; // общий срок расчетов                 //Duration to build tree 8967 milliseconds
@@ -135,8 +155,8 @@ public class RabbitsNodeTest {
         System.out.println("Middle " + middle + "\n");
         System.out.println("Duration to build tree " + Duration.between(before, middle).toMillis() + " milliseconds" + "\n");
 
-//        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
-//        System.out.println("Leafs: " + leafs + "\n");
+        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        System.out.println("Leafs: " + leafs + "\n");
 
         LocalDateTime after = LocalDateTime.now();
         System.out.println("After " + after + "\n");
