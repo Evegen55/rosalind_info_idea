@@ -26,8 +26,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(1, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(1, leafCount);
     }
 
     @Test
@@ -37,8 +40,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(1, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(1, leafCount);
     }
 
     @Test
@@ -48,8 +54,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(2, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(2, leafCount);
     }
 
     @Test
@@ -59,8 +68,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(2, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(2, leafCount);
     }
 
     @Test
@@ -70,8 +82,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(3, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(3, leafCount);
     }
 
     @Test
@@ -81,8 +96,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(4, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(4, leafCount);
     }
 
     @Test
@@ -92,8 +110,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(5, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(5, leafCount);
     }
 
     @Test
@@ -103,8 +124,11 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(7, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(7, leafCount);
     }
 
     @Test
@@ -114,31 +138,14 @@ public class RabbitsNodeTest {
         RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
         addHistoricalPairNode(rabbitsNode);//month 2
         performLeafNodes(rabbitsNode, 2, N); //2 because month is two.
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode);
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
         assertEquals(9, leafs);
+
+        long leafCount = getLeafCount(rabbitsNode);
+        assertEquals(9, leafCount);
     }
 
-    /**
-     * -Xmx12G
-     * <p>
-     * Before 2018-08-01T01:10:53.303983
-     * <p>
-     * Middle 2018-08-01T01:11:03.382539
-     * <p>
-     * Duration to build tree 10078 milliseconds
-     * <p>
-     * Leafs: 90815799
-     * <p>
-     * After 2018-08-01T01:12:16.618869
-     * <p>
-     * Duration to count leafs 73236 milliseconds
-     * <p>
-     * Duration full 83314 milliseconds
-     * <p>
-     * <p>
-     * Process finished with exit code 0
-     */
-    @Test
+//    @Test
     public void buildRabbitsThreeFree() {
         int N = 40; // общий срок расчетов                 //Duration to build tree 8967 milliseconds
         int M = 20; //срок жизни одной пары //max 20
@@ -153,94 +160,80 @@ public class RabbitsNodeTest {
         System.out.println("Middle " + middle + "\n");
         System.out.println("Duration to build tree " + Duration.between(before, middle).toMillis() + " milliseconds" + "\n");
 
-        long leafs = countLeafsAtTreeAtMaximumDepth(rabbitsNode); // TODO: 01.08.18 MULTITHREADING??
+        long leafs = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode);
+//        long leafs = getLeafCount(rabbitsNode); //
         System.out.println("Leafs: " + leafs + "\n");
 
         LocalDateTime after = LocalDateTime.now();
         System.out.println("After " + after + "\n");
         System.out.println("Duration to count leafs " + Duration.between(middle, after).toMillis() + " milliseconds" + "\n");
         System.out.println("Duration full " + Duration.between(before, after).toMillis() + " milliseconds" + "\n");
+
+//        long leafCount = getLeafCount(rabbitsNode);
+//        System.out.println("Leafs new: " + leafCount);
+//        LocalDateTime afterNew = LocalDateTime.now();
+//        System.out.println("After new " + afterNew + "\n");
+//        System.out.println("Duration to count leafs New " + Duration.between(after, afterNew).toMillis() + " milliseconds" + "\n");
+
+//        assertEquals(leafs, leafCount);
+
     }
 
-    /*
-int N = 40;
-
-int M = 12;
-
-Before 2018-08-01T01:14:05.987745
-
-Middle 2018-08-01T01:14:16.034387
-
-Duration to build tree 10046 milliseconds
-
-Leafs: 98130253
-
-After 2018-08-01T01:16:09.389341
-
-Duration to count leafs 113354 milliseconds
-
-Duration full 123401 milliseconds
-
-===========================================
-
-int N = 40;
-
-int M = 15;
-
-Before 2018-08-01T01:46:43.058868
-
-Middle 2018-08-01T01:46:53.216429
-
-Duration to build tree 10157 milliseconds
-
-Leafs: 101436039
-
-After 2018-08-01T01:47:50.868673
-
-Duration to count leafs 57652 milliseconds
-
-Duration full 67809 milliseconds
-
-============================================
-
-int N = 40;
-
-int M = 18;
-
-Before 2018-08-01T01:48:44.372671
-
-Middle 2018-08-01T01:48:55.072539
-
-Duration to build tree 10699 milliseconds
-
-Leafs: 102145741
-
-After 2018-08-01T01:49:52.593419
-
-Duration to count leafs 57520 milliseconds
-
-Duration full 68220 milliseconds
-
-
-============================================
-
-int N = 40;
-
-int M = 20;
-
-Before 2018-08-01T01:51:04.586782
-
-Middle 2018-08-01T01:51:14.541967
-
-Duration to build tree 9955 milliseconds
-
-Leafs: 102268235
-
-After 2018-08-01T01:52:11.732078
-
-Duration to count leafs 57190 milliseconds
-
-Duration full 67145 milliseconds
+    /**
+     * Before 2018-08-01T14:36:45.546
+     *
+     *  middleUpperHalfTree 2018-08-01T14:37:42.583
+     *
+     * Duration to build UPPER HALF tree 57037 milliseconds -> BIGGER PART of tree
+     *
+     *  middleLowerHalfTree 2018-08-01T14:37:51.037
+     *
+     * Duration to build LOWER HALF tree 8454 milliseconds
+     *
+     * WOW!!!
      */
+//    @Test
+    public void buildRabbitsThreeDivide() {
+        int N = 100; // общий срок расчетов
+        int M = 3; //срок жизни одной пары
+        System.out.println("N = " + N + "\tM = " + M);
+
+//        int N = 8; // общий срок расчетов
+//        int M = 3; //срок жизни одной пары
+
+        LocalDateTime before = LocalDateTime.now();
+        System.out.println("Before " + before + "\n");
+
+        RabbitsNode rabbitsNode = new RabbitsNode(M);  //month 1
+        addHistoricalPairNode(rabbitsNode);//month 2
+        addHistoricalPairNode(rabbitsNode.getUpperPairAsSelfLink());//month 3
+        addHistoricalPairNode(rabbitsNode.getUpperPairAsSelfLink().getUpperPairAsSelfLink());//month 4
+        addHistoricalPairNode(rabbitsNode.getUpperPairAsSelfLink().getLowerPairAsChild());//month 4
+
+        performLeafNodes(rabbitsNode.getUpperPairAsSelfLink().getUpperPairAsSelfLink(), 4, N); //4 because month is four.
+        long leafsUpper = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode.getUpperPairAsSelfLink().getUpperPairAsSelfLink());
+        // TODO: 01/08/2018 at here we can de-attach upper half of three and throw it away
+        rabbitsNode.getUpperPairAsSelfLink().setUpperPairAsSelfLink(null);
+        System.gc();
+
+        LocalDateTime middleUpperHalfTree = LocalDateTime.now();
+        System.out.println(" middleUpperHalfTree " +  middleUpperHalfTree + "\n");
+        System.out.println("Duration to build UPPER HALF tree " + Duration.between(before,  middleUpperHalfTree).toMillis() + " milliseconds" + "\n");
+
+
+        performLeafNodes(rabbitsNode.getUpperPairAsSelfLink().getLowerPairAsChild(), 4, N); //4 because month is four.
+        long leafsLower = countLeafsAtTreeAtMaximumDepthBFS(rabbitsNode.getUpperPairAsSelfLink().getLowerPairAsChild());
+
+        LocalDateTime middleLowerHalfTree = LocalDateTime.now();
+        System.out.println(" middleLowerHalfTree " +  middleLowerHalfTree + "\n");
+        System.out.println("Duration to build LOWER HALF tree " + Duration.between(middleUpperHalfTree,  middleLowerHalfTree).toMillis() + " milliseconds" + "\n");
+
+        long leafs = leafsLower + leafsUpper;
+
+        System.out.println(leafs);
+//        assertEquals(leafs, 98130253);
+//        assertEquals( 7, leafs);
+
+    }
 
 }
