@@ -1,0 +1,147 @@
+cd C:\Users\lartsev\IdeaProjects\interviews\out\production\classes\
+java -Xmx14G my.RabbitsNode
+
+Before 2018-08-01T13:17:38.257
+
+Middle 2018-08-01T13:18:58.892
+
+Duration to build tree 80635 milliseconds
+
+Leafs: 102268235
+
+After 2018-08-01T13:19:00.226
+
+Duration to count leafs 1334 milliseconds
+
+Duration full 81969 milliseconds
+
+cd C:\Users\lartsev\IdeaProjects\interviews\build\classes\java\main
+java -Xmx14G my.RabbitsNode 41 20
+
+N = 40 M = 20 102268235
+===================================================================
+N = 41	M = 20 165468585
+Before 2018-08-02T00:58:15.168357
+ middleUpperHalfTree 2018-08-02T00:59:42.719659
+Duration to build UPPER HALF tree 87551 milliseconds
+ middleLowerHalfTree 2018-08-02T01:00:16.012955
+Duration to build LOWER HALF tree 33293 milliseconds
+===================================================================
+N = 50	M = 3 922111
+Before 2018-08-02T01:10:01.221099
+ middleUpperHalfTree 2018-08-02T01:10:01.420100
+Duration to build UPPER HALF tree 199 milliseconds
+ middleLowerHalfTree 2018-08-02T01:10:01.629307
+Duration to build LOWER HALF tree 209 milliseconds
+===================================================================
+N = 60	M = 3 15346786
+Before 2018-08-02T01:11:45.842641
+ middleUpperHalfTree 2018-08-02T01:11:48.778316
+Duration to build UPPER HALF tree 2935 milliseconds
+ middleLowerHalfTree 2018-08-02T01:11:54.324357
+Duration to build LOWER HALF tree 5546 milliseconds
+===================================================================
+N = 65	M = 3 62608681
+Before 2018-08-02T01:28:46.658963
+ middleUpperHalfTree 2018-08-02T01:28:59.847027
+Duration to build UPPER HALF tree 13188 milliseconds
+ middleLowerHalfTree 2018-08-02T01:29:18.120776
+Duration to build LOWER HALF tree 18273 milliseconds
+===================================================================
+
+ java -Xmx25G bioinf_stronghold._9_fibd.RabbitsNode 67 3
+
+N = 67	M = 3 109870576
+Before 2018-08-02T01:30:02.113677
+ middleUpperHalfTree 2018-08-02T01:30:33.081750
+Duration to build UPPER HALF tree 30968 milliseconds
+ middleLowerHalfTree 2018-08-02T01:32:02.204128
+Duration to build LOWER HALF tree 89122 milliseconds
+===================================================================
+int N = 40;
+
+int M = 12;
+
+Before 2018-08-01T01:14:05.987745
+
+Middle 2018-08-01T01:14:16.034387
+
+Duration to build tree 10046 milliseconds
+
+Leafs: 98130253
+
+After 2018-08-01T01:16:09.389341
+
+Duration to count leafs 113354 milliseconds
+
+Duration full 123401 milliseconds
+
+===========================================
+
+int N = 40;
+
+int M = 15;
+
+Before 2018-08-01T01:46:43.058868
+
+Middle 2018-08-01T01:46:53.216429
+
+Duration to build tree 10157 milliseconds
+
+Leafs: 101436039
+
+After 2018-08-01T01:47:50.868673
+
+Duration to count leafs 57652 milliseconds
+
+Duration full 67809 milliseconds
+
+============================================
+
+int N = 40;
+
+int M = 18;
+
+Before 2018-08-01T01:48:44.372671
+
+Middle 2018-08-01T01:48:55.072539
+
+Duration to build tree 10699 milliseconds
+
+Leafs: 102145741
+
+After 2018-08-01T01:49:52.593419
+
+Duration to count leafs 57520 milliseconds
+
+Duration full 68220 milliseconds
+
+
+============================================
+
+int N = 40;
+
+int M = 20;
+
+Before 2018-08-01T01:51:04.586782
+
+Middle 2018-08-01T01:51:14.541967
+
+Duration to build tree 9955 milliseconds
+
+Leafs: 102268235
+
+After 2018-08-01T01:52:11.732078
+
+Duration to count leafs 57190 milliseconds
+
+Duration full 67145 milliseconds
+
+============================================
+
+
+
+
+
+
+
